@@ -32,7 +32,7 @@ app.get('/', function(req, res) {
 app.post('/', function(req, res){
     var area = req.body.area;
     console.log("AREAS " + req.body.area);
-    var query = `SELECT * FROM emails WHERE area="${area}"`;
+    var query = `SELECT email,name FROM emails WHERE area="${area}"`;
 
     db.query(query, function(err, result)
     {
