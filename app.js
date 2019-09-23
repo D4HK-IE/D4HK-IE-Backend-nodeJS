@@ -12,7 +12,6 @@ const db = {
     user: "7D5oLoh1Ft",
     password: "zR1K1CNQkG",
     database:"7D5oLoh1Ft",
-    connectionLimit: 99,
 };
 
 function disconnect_handler() {
