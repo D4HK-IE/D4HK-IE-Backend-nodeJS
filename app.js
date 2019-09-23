@@ -16,16 +16,20 @@ const db = mysql.createConnection({
 
 db.connect();
 
-app.get('/data', function(req,res){
-var sql = 'SELECT * FROM emails';
-db.query(sql, (err, result)=>{
+app.get('/', function(req, res) {
+    var sql = 'SELECT * FROM emails';
+    db.query(sql, (err, result)=>{
     if(err) throw err;
     console.log(result);
     res.send(result);
-});
+    });
 });
 
-app.post('/data', function(req, res){
+// app.get('/data', function(req,res){
+
+// });
+
+app.post('/', function(req, res){
     var area = req.body.area;
     console.log("AREAS " + req.body.area);
     var query = `SELECT email FROM emails WHERE area="${area}"`;
