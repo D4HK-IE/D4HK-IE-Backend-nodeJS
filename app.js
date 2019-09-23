@@ -47,6 +47,6 @@ app.post('/data', function(req, res){
 
 });
 
-app.listen(3210, ()=>{
+app.listen(8000, ()=>{
     console.log('Server connected to port 3210')
 });
