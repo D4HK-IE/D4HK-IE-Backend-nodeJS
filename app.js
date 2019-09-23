@@ -7,31 +7,14 @@ const cors = require('cors');
 app.use(bodyParser.json());
 app.use(cors());
 
-const db = {
+const db = mysql.createConnection({
     host: "remotemysql.com",
     user: "7D5oLoh1Ft",
     password: "zR1K1CNQkG",
-    database:"7D5oLoh1Ft",
-};
+    database:"7D5oLoh1Ft"
+});
 
-function disconnect_handler() {
-    let conn = mysql.createConnection(db);
-    conn.connect(err => {
-        (err) && setTimeout('disconnect_handler()', 2000);
-    });
-
-     conn.on('error', err => {
-        if (err.code === 'PROTOCOL_CONNECTION_LOST') {
-            // db error 重新連線
-            disconnect_handler();
-        } else {
-            throw err;
-        }
-    });
-    exports.conn = conn;
-}
-
-exports.disconnect_handler = disconnect_handler;
+db.connect();
 
 app.get('/', function(req, res) {
     var sql = 'SELECT * FROM emails';
