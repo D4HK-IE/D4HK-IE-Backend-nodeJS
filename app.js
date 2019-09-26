@@ -8,14 +8,14 @@ app.use(bodyParser.json());
 app.use(cors());
 
 const db = mysql.createConnection({
-    host:"34.253.248.15",
-    user: "d4hkbuil_d4userk",
-    password:"qrEQI$IQvt}1",
-    database:"d4hkbuil_d4hk"
-    // host: "remotemysql.com",
-    // user: "7D5oLoh1Ft",
-    // password: "zR1K1CNQkG",
-    // database:"7D5oLoh1Ft"
+    // host:"34.253.248.15",
+    // user: "d4hkbuil_d4userk",
+    // password:"qrEQI$IQvt}1",
+    // database:"d4hkbuil_d4hk"
+    host: "remotemysql.com",
+    user: "7D5oLoh1Ft",
+    password: "zR1K1CNQkG",
+    database:"7D5oLoh1Ft"
 });
 
 db.connect();
